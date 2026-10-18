@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Mục Đầu Tư | Lập Trình Viên</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts để nâng cao thiết kế -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="logo">MyPortfolio</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">Giới Thiệu</a></li>
+                <li><a href="#projects">Dự Án</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </nav>
+        <button id="themeToggle" class="btn">Đổi Giao Diện</button>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Section: Giới thiệu (Hero/About) -->
+        <section id="about" class="hero fade-in">
+            <div class="hero-content">
+                <h1>Xin chào, Tôi là <span class="highlight">Nguyễn Văn A</span></h1>
+                <p>Nhà phát triển Web đam mê tạo ra các trải nghiệm người dùng tuyệt vời và các trang web có tính đáp ứng cao.</p>
+                <a href="#projects" class="btn btn-primary">Xem Dự Án Của Tôi</a>
+            </div>
+            <div class="hero-image">
+                <!-- Thay link ảnh này bằng ảnh thật của bạn -->
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Chân dung Nguyễn Văn A">
+            </div>
+        </section>
+
+        <!-- Section: Dự án (Projects) -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Các Dự Án Nổi Bật</h2>
+            <div class="project-grid">
+                <!-- Dự án 1 -->
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Giao diện dự án Web E-commerce">
+                    <div class="card-content">
+                        <h3>E-Commerce Web</h3>
+                        <p>Một cửa hàng trực tuyến bán thiết bị điện tử với đầy đủ tính năng giỏ hàng.</p>
+                    </div>
+                </article>
+                <!-- Dự án 2 -->
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="Bảng điều khiển Data Dashboard">
+                    <div class="card-content">
+                        <h3>Data Dashboard</h3>
+                        <p>Bảng điều khiển phân tích dữ liệu tương tác sử dụng JavaScript và Chart.js.</p>
+                    </div>
+                </article>
+                <!-- Dự án 3 -->
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=400&q=80" alt="Ứng dụng Blog cá nhân">
+                    <div class="card-content">
+                        <h3>Personal Blog</h3>
+                        <p>Nền tảng blog cá nhân nhẹ nhàng và tối ưu hóa SEO hoàn toàn từ đầu.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section: Liên hệ (Contact) -->
+        <section id="contact" class="section bg-alt">
+            <h2 class="section-title">Liên Hệ Với Tôi</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Tên của bạn:</label>
+                    <input type="text" id="name" name="name" placeholder="Ví dụ: Nguyễn Văn A">
+                    <small class="error-msg" id="nameError">Vui lòng nhập tên của bạn.</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email của bạn:</label>
+                    <input type="email" id="email" name="email" placeholder="Ví dụ: email@domain.com">
+                    <small class="error-msg" id="emailError">Vui lòng nhập một email hợp lệ.</small>
+                </div>
+                <div class="form-group">
+                    <label for="message">Lời nhắn:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Bạn muốn nói gì..."></textarea>
+                    <small class="error-msg" id="messageError">Vui lòng nhập lời nhắn (ít nhất 10 ký tự).</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Gửi Tin Nhắn</button>
+                <div id="successMessage" class="success-msg hidden">Cảm ơn bạn! Tin nhắn đã được gửi (Giả lập).</div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Bản quyền thuộc về Nguyễn Văn A. Thiết kế dựa trên tiêu chuẩn bài tập.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

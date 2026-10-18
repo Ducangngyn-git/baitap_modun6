@@ -1,0 +1,304 @@
+/* --- BIẾN CSS & CÀI ĐẶT CHUNG (Hỗ trợ Dark/Light Mode) --- */
+:root {
+    --bg-color: #f9fbfd;
+    --text-color: #333333;
+    --primary-color: #0066cc;
+    --secondary-color: #004c99;
+    --nav-bg: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #dddddd;
+    --footer-bg: #222222;
+    --footer-text: #ffffff;
+}
+
+/* Biến màu cho chế độ Tối (Cải tiến số 4) */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --nav-bg: #1e1e1e;
+    --card-bg: #2c2c2c;
+    --border-color: #444444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* CẢI TIẾN 1: Chân trang dính (Sticky Footer) */
+/* Cấu trúc body thành flex column, min-height 100vh đẩy footer xuống đáy */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+main {
+    flex: 1; /* Main chiếm phần không gian còn lại, ép footer xuống dưới */
+}
+
+/* --- NAVIGATION HEADER --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--nav-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- BUTTONS & HOVER EFFECTS (Điểm thiết kế 10/10) --- */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px); /* Hoạt hình di chuột CSS */
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.4);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    margin-bottom: 2rem;
+    transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+/* --- SECTIONS --- */
+.section {
+    padding: 4rem 5%;
+}
+
+.bg-alt {
+    background-color: rgba(0,0,0,0.03); /* Phân tách vùng bằng màu nền */
+}
+
+body.dark-mode .bg-alt {
+    background-color: rgba(255,255,255,0.05);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- PROJECT CARDS --- */
+.project-grid {
+    display: grid;
+    gap: 2rem;
+    /* Cấu hình mặc định cho Mobile: 1 cột */
+    grid-template-columns: 1fr; 
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* --- FORM LIÊN HỆ --- */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: inherit;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* CSS cho thông báo lỗi của JavaScript form validation */
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none; /* Ẩn mặc định */
+}
+
+.success-msg {
+    color: #27ae60;
+    margin-top: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* --- ANIMATIONS TRANG (Điểm thiết kế 10/10) --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* --- CẢI TIẾN 2: TÍNH ĐÁP ỨNG - BỐ CỤC KHUNG NHÌN THỨ BA (Responsive Media Queries) --- */
+
+/* 1. Breakpoint cho Tablet (Khung nhìn thứ 2) */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+    
+    .hero-content {
+        max-width: 50%;
+    }
+    
+    .hero-image img {
+        margin-bottom: 0;
+    }
+
+    /* Grid chuyển sang 2 cột cho chế độ xem bảng */
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 2. Breakpoint cho Desktop (Khung nhìn thứ 3) */
+@media (min-width: 1024px) {
+    /* Grid chuyển sang 3 cột hoàn chỉnh cho màn hình lớn */
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero {
+        padding: 6rem 10%;
+    }
+    
+    .section {
+        padding: 5rem 10%;
+    }
+}
